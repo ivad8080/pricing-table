@@ -35,6 +35,7 @@ body {
 main {
   display: flex;
   flex-direction: column;
+  margin-bottom: 6rem;
 }
 
 main > header {
@@ -59,6 +60,7 @@ main > article > section {
   min-height: 29.375rem;
   border-radius: .5rem;
   background-color: var(--thirdy-color);
+  box-shadow: 0 1px 2px var(--second-color);
 }
 
 /* End Structure */
