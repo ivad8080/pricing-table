@@ -1,0 +1,176 @@
+:root {
+  --pink-500: #e91e63;
+  --pink-900: #880e4f;
+  --gray-900: #212121;
+  --gray-50: #FAFAFA;
+
+  --first-color: var(--pink-500);
+  --second-color: var(--pink-900);
+  --thirdy-color: var(--gray-50);
+  --fourthy-color: var(--gray-900);
+
+  --first-font: 'Lexend', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px dotted rgba(0, 0, 0, 20%); */
+}
+
+ul, li {
+  list-style: none;
+}
+
+body {
+  background-color: var(--first-color);
+  font-family: var(--first-font);
+  font-weight: 300;
+  color: var(--fourthy-color);
+}
+
+/* Start Structure */
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+main > header {
+  padding: 6.5rem 0 13rem;
+  background-color: var(--second-color);
+  text-align: center;
+  color: var(--thirdy-color);
+}
+
+main > article {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: -8rem;
+}
+
+main > article > section {
+  display: flex;
+  flex-direction: column;
+  max-width: 22.188rem;
+  min-height: 29.375rem;
+  border-radius: .5rem;
+  background-color: var(--thirdy-color);
+}
+
+/* End Structure */
+
+/* Start Header */
+
+main > header > h1 {
+  font-size: 2.8rem;
+  font-weight: 400;
+}
+
+main > header > p {
+  font-size: 1.1rem;
+  font-weight: 200;
+}
+
+/* End Header */
+
+/* Start Plans Section */
+
+article > section > .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.3rem 1.1rem;
+  border-radius: .5rem .5rem 0 0;
+}
+
+article > section > .title.selected {
+  color: var(--thirdy-color);
+  background-color: var(--first-color);
+}
+
+article > section > .title > h2 {
+  margin-left: .7rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+article > section > .title > h2:not(.selected) {
+  position: relative;
+  top: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+article > section > .title > em {
+  font-size: .7rem;
+  font-style: normal;
+  padding: .5rem 1.5rem;
+  border-radius: 1rem;
+  background-color: var(--second-color);
+}
+
+article > section > .description {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 1.8rem 2rem;
+}
+
+article > section > .description > .price > span:nth-of-type(1) {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+article > section > .description > .price.selected {
+  color: var(--first-color);
+}
+
+article > section > .description > p {
+  font-size: .9rem;
+}
+
+article > section > .description > hr {
+  border: 1px solid var(--first-color);
+}
+
+article > section > .description > ul.selected {
+  font-weight: 500;
+}
+
+article > section > .description > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+article > section > .description > ul > li {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  font-size: .9rem;
+}
+
+article > section > .description > button {
+  margin-top: auto;
+  width: 100%;
+  padding: .7rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--first-color);
+  border-radius: .5rem;
+  border: 1px solid var(--first-color);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+article > section > .description > button.selected {
+  color: var(--thirdy-color);
+  background-color: var(--first-color);
+}
+
+/* End Plans Section */
