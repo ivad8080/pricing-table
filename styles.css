@@ -16,7 +16,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border: 1px dotted rgba(0, 0, 0, 20%); */
+  /* outline: 1px solid rgba(0, 0, 0, 40%); */
 }
 
 ul, li {
@@ -65,10 +65,24 @@ main > article > section {
   display: flex;
   flex-direction: column;
   max-width: 22.188rem;
-  min-height: 29.375rem;
+  /* min-height: 29.375rem; */
+  height: 29.375rem;
   border-radius: .5rem;
   background-color: var(--thirdy-color);
-  box-shadow: 0 1px 2px var(--second-color);
+  box-shadow: 1px -1px 5px 1px rgba(30, 30, 30, 30%);
+  transition: transform 150ms ease-in-out;
+  user-select: none;
+}
+
+main > article > section.selected { /*fix white pixel when selected is override*/
+  border-radius: .6rem .6rem .5rem .5rem;
+}
+
+@media (min-width: 1025px) {
+  main > article > section.selected {
+    margin-top: -.5rem;
+    height: 30.5rem;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -81,6 +95,10 @@ main > article > section {
   main > article > section {
     min-width: 100%;
   }
+}
+
+main > article > section:hover {
+  transform: scale(1.05);
 }
 
 /* End Structure */
@@ -106,10 +124,10 @@ article > section > .title {
   align-items: center;
   justify-content: space-between;
   padding: 1.3rem 1.1rem;
-  border-radius: .5rem .5rem 0 0;
 }
 
 article > section > .title.selected {
+  border-radius: .49rem .49rem 0 0;
   color: var(--thirdy-color);
   background-color: var(--first-color);
 }
@@ -188,6 +206,20 @@ article > section > .description > button {
   border: 1px solid var(--first-color);
   background-color: transparent;
   cursor: pointer;
+  transition: background-color 300ms ease-in-out, color 300ms ease-in-out, transform 300ms ease-in-out, filter 300ms ease-in-out;
+}
+
+article > section > .description > button:hover {
+  transform: scale(1.05);
+}
+
+article > section > .description > button:hover:not(.selected) {
+  color: var(--thirdy-color);
+  background-color: var(--first-color);
+}
+
+article > section > .description > button.selected:hover {
+  filter: brightness(1.1);
 }
 
 article > section > .description > button.selected {
